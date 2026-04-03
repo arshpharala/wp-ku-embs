@@ -1,0 +1,92 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/style.scss to edit this template
+*/
+/*
+    Created on : Oct 3, 2025, 10:17:00 PM
+    Author     : Jafran
+*/
+
+p{
+    margin: 20px 0;
+}
+
+.hero__title {
+    font-size: 55px;
+    line-height: 61px;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.main-container{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.office-bearers-section .bearer-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 100px;
+    .bearer-card__shape{
+        max-width: 300px;
+    }
+    .bearer-card__info{
+        margin-top: 1rem;
+    }
+    .bearer-card__contact{
+        border: 1px solid #75277d;
+        border-radius: 30px;
+        padding: 3px 20px;
+        display: inline-block;
+        margin-top: 20px;
+    }
+}
+
+#events-single-page {
+    .imgs{
+        margin-bottom: 50px;
+        &.imgs-2{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+    }
+}
+
+#speakers-page .speakers-section{
+    padding-top: 0;
+    .speakers-container{
+        gap: 50px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+#membership-page{
+    p {
+        margin: 5px 0;
+    }
+    ol {
+        list-style: none;
+        counter-reset: my-counter;
+        margin-top: 40px;
+        margin-left: 20px;
+        li {
+            counter-increment: my-counter;
+            margin-bottom: 30px;
+            &::before {
+                content: counter(my-counter) ". ";
+                color: #905397;
+                font-weight: bold;
+                position: absolute;
+                left: 0;
+            }
+        }
+    }
+    ul{
+        margin-left: 40px;
+        list-style: circle;
+        li{
+            margin-bottom: 8px;
+        }
+    }
+}
