@@ -85,7 +85,6 @@
         <h2 class="section-title">Media</h2>
 
         <div class="owl-carousel owl-carousel-2 media-cards">
-
             <?php
             $args = array(
                 'post_type'      => 'attachment',
@@ -94,130 +93,41 @@
                 'posts_per_page' => -1,
                 'tax_query'      => array(
                     array(
-                        'taxonomy' => 'media_category',
+                        'taxonomy' => 'media-category',
                         'field'    => 'slug',
-                        'terms'    => 'conference',
+                        'terms'    => array('conference'),
                     ),
                 ),
             );
+
             $media = new WP_Query($args);
-            // dump($medi)
-            if ($media->have_posts()) : while ($media->have_posts()) : $media->the_post();
+
+            if ($media->have_posts()) :
+                while ($media->have_posts()) : $media->the_post();
+
+                    $image_url = wp_get_attachment_image_url(get_the_ID(), 'full');
+                    $title     = get_the_title();
             ?>
                     <div class="media-card">
-                        <img
-                            src="<?php echo esc_url(wp_get_attachment_image_url(get_the_ID(), 'full')); ?>"
-                            alt="<?php echo esc_attr(get_the_title()); ?>"
-                            class="event-card__logo" />
-                        <p class="event-card__desc">
-                            <?php echo get_the_title(); ?>
-                        </p>
+                        <?php if ($image_url) : ?>
+                            <img
+                                src="<?php echo esc_url($image_url); ?>"
+                                alt="<?php echo esc_attr($title); ?>"
+                                class="event-card__logo">
+                        <?php endif; ?>
                     </div>
-            <?php endwhile;
+            <?php
+                endwhile;
+            else :
+                echo '<p>No media found.</p>';
             endif;
-            wp_reset_postdata(); ?>
 
-            <!-- <div class="media-card">
-                <img
-                    src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/media-1.png"
-                    alt="Media 1"
-                    class="img-fluid" />
-            </div>
-            <div class="media-card">
-                <img
-                    src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/media-2.png"
-                    alt="Media 1"
-                    class="img-fluid" />
-            </div>
-            <div class="media-card">
-                <img
-                    src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/media-1.png"
-                    alt="Media 1"
-                    class="img-fluid" />
-            </div>
-            <div class="media-card">
-                <img
-                    src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/media-2.png"
-                    alt="Media 1"
-                    class="img-fluid" />
-            </div> -->
+            wp_reset_postdata();
+            ?>
+
+
         </div>
 
-        <!-- Bootstrap Carousel -->
-        <!--                <div
-                            id="mediaCarousel"
-                            class="carousel slide"
-                            data-bs-ride="carousel"
-                            data-bs-touch="true"
-                            >
-                            <div class="carousel-inner">
-                                 First Slide 
-                                <div class="carousel-item active">
-                                    <div class="row media-cards">
-                                        <div class="col-md-4 col-12 mt-3 mt-md-0">
-                                            <div class="media-card">
-                                                <img
-                                                    src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/media-1.png"
-                                                    alt="Media 1"
-                                                    class="img-fluid"
-                                                    />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-12 mt-3 mt-md-0">
-                                            <div class="media-card">
-                                                <img
-                                                    src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/media-2.png"
-                                                    alt="Media 2"
-                                                    class="img-fluid"
-                                                    />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-12 mt-3 mt-md-0">
-                                            <div class="media-card">
-                                                <img
-                                                    src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/media-1.png"
-                                                    alt="Media 3"
-                                                    class="img-fluid"
-                                                    />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-        
-                                 Second Slide 
-                                <div class="carousel-item">
-                                    <div class="row media-cards">
-                                        <div class="col-md-4 col-12 mt-3 mt-md-0">
-                                            <div class="media-card">
-                                                <img
-                                                    src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/media-2.png"
-                                                    alt="Media 4"
-                                                    class="img-fluid"
-                                                    />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-12 mt-3 mt-md-0">
-                                            <div class="media-card">
-                                                <img
-                                                    src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/media-1.png"
-                                                    alt="Media 5"
-                                                    class="img-fluid"
-                                                    />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-12 mt-3 mt-md-0">
-                                            <div class="media-card">
-                                                <img
-                                                    src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/media-2.png"
-                                                    alt="Media 6"
-                                                    class="img-fluid"
-                                                    />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>-->
     </div>
 </section>
 
@@ -252,34 +162,38 @@
             <!-- Card -->
 
             <?php
-                $args = array(
-                    'post_type' => 'team',
-                    'posts_per_page' => -1
-                );
+            $args = array(
+                'post_type' => 'team',
+                'posts_per_page' => -1
+            );
 
-                $teams = new WP_Query($args);
-                
-                if ($teams->have_posts()) : while ($teams->have_posts()) : $teams->the_post();
+            $teams = new WP_Query($args);
+
+            if ($teams->have_posts()) : while ($teams->have_posts()) : $teams->the_post();
+
+                    $img = ($teams->get_post_thumbnail_url()) ? $teams->get_post_thumbnail_url() : get_template_directory_uri() . '/assets/images/no-member.png';
             ?>
-            
-            <div class="bearer-card">
-                <div class="bearer-card__shape">
-                    <img
-                        src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/member-1.png"
-                        alt="Rateb Katmah"
-                        class="bearer-card__photo" />
-                </div>
 
-                <div class="bearer-card__role"><?php echo get_field('designation')  ?></div>
-                <div class="bearer-card__info">
-                    <h3 class="bearer-card__name"><?php the_title() ?></h3>
-                    <hr />
-                    <p class="bearer-card__contact">Contact : <?php echo get_field('email') ?></p>
-                    <a class="bearer-card__bio" href="#">Bio</a>
-                </div>
-            </div>
+                    <div class="bearer-card">
+                        <div class="bearer-card__shape">
+                            <img
+                                src="<?php echo $img ?>"
+                                alt="<?php the_title() ?>"
+                                class="bearer-card__photo" />
+                        </div>
 
-            <?php endwhile; endif; wp_reset_postdata(); ?>
+                        <div class="bearer-card__role"><?php echo get_field('designation')  ?></div>
+                        <div class="bearer-card__info">
+                            <h3 class="bearer-card__name"><?php the_title() ?></h3>
+                            <hr />
+                            <p class="bearer-card__contact">Contact : <?php echo get_field('email') ?></p>
+                            <a class="bearer-card__bio" href="#">Bio</a>
+                        </div>
+                    </div>
+
+            <?php endwhile;
+            endif;
+            wp_reset_postdata(); ?>
 
         </div>
     </div>
@@ -307,7 +221,7 @@
 
                         <article class="event-item">
                             <span><?php the_title(); ?></span>
-                            <a href="#" class="event-link">
+                            <a href="<?php echo get_permalink(); ?>" class="event-link">
                                 <img
                                     src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/arrow-right.png"
                                     alt="arrow"
@@ -368,32 +282,34 @@
     <div class="container">
         <div class="conference-grid">
             <?php
-                $args = array(
-                    'post_type' => 'embs_event',
-                    'event_category' => 'highlights',
-                    'posts_per_page' => -1,
-                );
+            $args = array(
+                'post_type' => 'embs_event',
+                'event_category' => 'highlights',
+                'posts_per_page' => -1,
+            );
 
-                $events = new WP_Query($args);
-                if ($events->have_posts()) : while ($events->have_posts()) : $events->the_post();
-                ?>
+            $events = new WP_Query($args);
+            if ($events->have_posts()) : while ($events->have_posts()) : $events->the_post();
+            ?>
 
-            <!-- CARD 1 -->
-            <div class="conference-card">
-                <img
-                    src="<?php echo get_the_post_thumbnail_url(); ?>"
-                    alt="Conference Image"
-                    class="conference-img" />
-                <div class="conference-content">
-                    <h3><?php the_title() ?></h3>
-                    <p>
-                        <?php the_content(); ?>
-                    </p>
-                    <a href="#" class="button-shape button-shape-primary read-more">Read More</a>
-                </div>
-            </div>
+                    <!-- CARD 1 -->
+                    <div class="conference-card">
+                        <img
+                            src="<?php echo get_the_post_thumbnail_url(); ?>"
+                            alt="Conference Image"
+                            class="conference-img" />
+                        <div class="conference-content">
+                            <h3><?php the_title() ?></h3>
+                            <p>
+                                <?php the_content(); ?>
+                            </p>
+                            <a href="<?php echo get_permalink(); ?>" class="button-shape button-shape-primary read-more">Read More</a>
+                        </div>
+                    </div>
 
-            <?php endwhile; endif; wp_reset_postdata(); ?>
+            <?php endwhile;
+            endif;
+            wp_reset_postdata(); ?>
         </div>
     </div>
 </section>
@@ -493,11 +409,13 @@
                     );
                     $speakers = new WP_Query($args);
                     if ($speakers->have_posts()) : while ($speakers->have_posts()) : $speakers->the_post();
+
+                    $img = has_post_thumbnail() ? get_the_post_thumbnail_url() : esc_url(get_template_directory_uri()). "/assets/images/no-speaker.png";
                     ?>
                             <div class="speaker-card flex-fill">
                                 <div class="speaker-image">
                                     <img
-                                        src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/no-speaker.png"
+                                        src="<?php echo $img ?>" 
                                         alt="<?php the_title(); ?>"
                                         class="img-fluid w-100" />
                                 </div>
