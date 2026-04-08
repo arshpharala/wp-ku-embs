@@ -135,39 +135,6 @@ add_action( 'init', 'embs_register_cpt_speakers' );
 
 
 /**
- * Register CPT: Team Members (Office Bearers)
- */
-function embs_register_cpt_team() {
-	$labels = array(
-		'name'               => _x( 'Team Members', 'post type general name', 'embs' ),
-		'singular_name'      => _x( 'Team Member', 'post type singular name', 'embs' ),
-		'add_new'            => __( 'Add New', 'embs' ),
-		'add_new_item'       => __( 'Add New Team Member', 'embs' ),
-		'edit_item'          => __( 'Edit Team Member', 'embs' ),
-		'new_item'           => __( 'New Team Member', 'embs' ),
-		'view_item'          => __( 'View Team Member', 'embs' ),
-		'search_items'       => __( 'Search Team Members', 'embs' ),
-		'not_found'          => __( 'No team members found', 'embs' ),
-		'not_found_in_trash' => __( 'No team members found in Trash', 'embs' ),
-		'menu_name'          => __( 'Team Members', 'embs' ),
-	);
-	$args = array(
-		'labels'             => $labels,
-		'public'             => true,
-		'show_in_rest'       => true,
-		'has_archive'        => false,
-		'rewrite'            => array( 'slug' => 'team' ),
-		'menu_icon'          => 'dashicons-groups',
-		'supports'           => array( 'title', 'thumbnail', 'custom-fields' ),
-		'show_in_menu'       => true,
-		'menu_position'      => 7,
-	);
-	register_post_type( 'embs_team', $args );
-}
-add_action( 'init', 'embs_register_cpt_team' );
-
-
-/**
  * Register CPT: Awards & Milestones
  */
 function embs_register_cpt_awards() {

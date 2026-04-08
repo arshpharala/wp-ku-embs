@@ -784,7 +784,7 @@ p {
         top: 0;
         width: 50%;
         height: 100%;
-        background: url(../images/membership.png) no-repeat center center;
+        background: var(--membership-bg) no-repeat center center;
         background-size: cover;
     }
 
@@ -1130,11 +1130,13 @@ p {
     }
 
     .award-item {
-        display: flex;
+        // display: flex;
         gap: 2.75rem;
         margin-bottom: var(--margin-section);
-        flex-wrap: wrap;
-        align-items: center;
+        // flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        align-items: start;
 
         &.reverse {
             flex-direction: row;
@@ -1145,14 +1147,17 @@ p {
 
             .award-image {
                 position: relative;
-                flex: 1;
+                display: grid;
+                place-items: center;
+
                 border: 10px solid var(--white-color);
                 background-color: transparent;
 
                 img {
-                    width: 100%;
-                    height: 100%;
+                    width: 468px;
+                    height: 286px;
                     scale: 0.9;
+                    object-fit: cover;
 
                     display: block;
                     position: relative;

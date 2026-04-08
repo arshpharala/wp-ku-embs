@@ -21,20 +21,23 @@ $inside = (!is_front_page() && !is_home()) ? true : false;
 <header id="home" >
 
 <?php
-    $banner = get_field('banner_image');
-    $tagline = get_field('banner_tagline');
+    $banner_image = get_field('banner_image');
+    $banner_heading = get_field('banner_heading');
+    $banner_tagline = get_field('banner_tagline');
+    $banner_cta = get_field('banner_cta');
+    $banner_cta_link = get_field('banner_cta_link');
 
-    if(!$banner){
-        $banner = get_template_directory_uri() . '/assets/images/hero-bg.png';
+    if(!$banner_image){
+        $banner_image = get_template_directory_uri() . '/assets/images/hero-bg.png';
     }
 
-    if(!$tagline){
-        $tagline = 'IEEE Engineering in Medicine and Biology Society';
+    if(!$banner_heading){
+        $banner_heading = 'IEEE Engineering in Medicine and Biology Society';
     }
 
 ?>
 
-    <div class="hero" style="background-image: url('<?php echo esc_url($banner); ?>');">
+    <div class="hero" style="background-image: url('<?php echo esc_url($banner_image); ?>');">
         <!-- White navigation strip -->
         <div class="hero__nav-strip">
             <div class="container">
@@ -79,19 +82,21 @@ $inside = (!is_front_page() && !is_home()) ? true : false;
                     <div class="col-md-10">
                         <div class="hero__content">
                             <h1 class="hero__title">
-                                <?php echo $tagline; ?>
+                                <?php echo $banner_heading; ?>
                             </h1>
-                            <a href="#" class="hero__btn">Read More</a>
+                            <a href="<?php echo $banner_cta_link; ?>" class="hero__btn"><?php echo $banner_cta; ?></a>
                         </div>
                     </div>
                 </div>
                 <div class="hero__botom-tagline">
+                    <?php if($banner_tagline): ?>
                     <img
                         src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/pin-drop-icon.png"
                         alt="Location Icon"
                         class="hero__location-icon"
                         />
-                    Khalifa University, Main Campus, Building B, 2nd Floor
+                    <?php echo $banner_tagline; ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
