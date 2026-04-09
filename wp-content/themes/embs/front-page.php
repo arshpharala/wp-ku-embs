@@ -365,25 +365,6 @@
         endif;
         wp_reset_postdata();
         ?>
-
-        <!-- Block 2 (reversed) -->
-        <!-- <div class="award-item reverse">
-            <div class="award-text">
-                <h3>Best Regional Student Chapter Award - 2025:</h3>
-                <p>
-                    The IEEE EMBS Khalifa University Student Chapter has been
-                    recognized for its outstanding contributions to the IEEE
-                    Engineering in Medicine and Biology Society through impactful
-                    student engagement.
-                </p>
-                <a href="#" class="button-shape button-shape-light read-more-btn">Read More</a>
-            </div>
-            <div class="award-border">
-                <div class="award-image">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/milestone.png" alt="Award Image" />
-                </div>
-            </div>
-        </div> -->
     </div>
 </section>
 
@@ -492,33 +473,6 @@
                     endwhile;
                 endif;
                 wp_reset_postdata(); ?>
-
-                <!-- <div
-                    class="tab-pane fade"
-                    id="lab2"
-                    role="tabpanel"
-                    aria-labelledby="lab2-tab"
-                    >
-                    <p>
-                        The Rehabilitation Lab focuses on rehabilitation engineering,
-                        assistive devices, and recovery-focused research. It supports
-                        patients through advanced motion capture and biomechanical
-                        analysis tools.
-                    </p>
-                </div>
-
-                <div
-                    class="tab-pane fade"
-                    id="lab3"
-                    role="tabpanel"
-                    aria-labelledby="lab3-tab"
-                    >
-                    <p>
-                        The MedXAI research group combines AI with medical imaging and
-                        diagnostics. Their goal is to enhance clinical decision-making
-                        using predictive models and machine learning in healthcare.
-                    </p>
-                </div> -->
             </div>
 
 
@@ -542,7 +496,7 @@
                                 src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/arrow-right.png"
                                 alt="arrow"
                                 class="arrow" />
-                            <?php the_title(); ?>
+                            <?php the_content(); ?>
                         </li>
 
                 <?php endwhile;
@@ -626,18 +580,22 @@
                 <h4>Networking opportunities with industry professionals</h4>
                 <ul>
                     <li>
-                        <img
-                            src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/arrow-right.png"
-                            alt="arrow"
-                            class="arrow" />
-                        KU Alumni
+                        <a href="https://www.ku.ac.ae/career-alumni-alumni" target="_blank">
+                            <img
+                                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/arrow-right.png"
+                                alt="arrow"
+                                class="arrow" />
+                            KU Alumni
+                        </a>
                     </li>
                     <li>
-                        <img
-                            src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/arrow-right.png"
-                            alt="arrow"
-                            class="arrow" />
-                        KU Simplicity CSM
+                        <a href="https://khalifa-csm.symplicity.com/" target="_blank">
+                            <img
+                                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/arrow-right.png"
+                                alt="arrow"
+                                class="arrow" />
+                            KU Simplicity CSM
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -652,11 +610,13 @@
                         Peer Mentoring Program
                     </li>
                     <li>
-                        <img
-                            src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/arrow-right.png"
-                            alt="arrow"
-                            class="arrow" />
-                        Career & Alumni Services
+                        <a href="https://www.ku.ac.ae/career-alumni-students" target="_blank">
+                            <img
+                                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/arrow-right.png"
+                                alt="arrow"
+                                class="arrow" />
+                            Career & Alumni Services
+                        </a>
                     </li>
                     <li>
                         <img
@@ -670,14 +630,16 @@
                             src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/arrow-right.png"
                             alt="arrow"
                             class="arrow" />
-                        Career Fair
+                        Career Fair – Every Fall
                     </li>
                     <li>
-                        <img
-                            src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/arrow-right.png"
-                            alt="arrow"
-                            class="arrow" />
-                        KU Tawjeeh Program
+                        <a href="https://www.ku.ac.ae/research-centers/center-for-biotechnology-btc/tawjeeh-mentorship-program" target="_blank">
+                            <img
+                                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/arrow-right.png"
+                                alt="arrow"
+                                class="arrow" />
+                            KU Tawjeeh Program
+                        </a>
                     </li>
 
                     <li>
@@ -685,50 +647,20 @@
                             src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/arrow-right.png"
                             alt="arrow"
                             class="arrow" />
-                        Majors Day
+                        Majors Day – Ever Fall
                     </li>
                     <li>
-                        <img
-                            src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/arrow-right.png"
-                            alt="arrow"
-                            class="arrow" />
-                        CTL – Student Development
+                        <a href=": https://www.ku.ac.ae/academics/center-for-teaching-and-learning" target="_blank">
+                            <img
+                                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/arrow-right.png"
+                                alt="arrow"
+                                class="arrow" />
+                            CTL – Student Development
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
 </section>
-
-<!-- contact section  -->
-<!--        <section id="contact" class="contact-section">
-    <div class="container">
-        <h2 class="section-title">Contact Us</h2>
-        <form class="contact-form">
-            <div class="input-row">
-                <div class="angled-border">
-                    <div class="angled-input">
-                        <input type="text" placeholder="Your name" />
-                    </div>
-                </div>
-                <div class="angled-border">
-                    <div class="angled-input">
-                        <input type="email" placeholder="Your Email" />
-                    </div>
-                </div>
-            </div>
-            <div class="input-row">
-                <div class="angled-border">
-                    <div class="angled-textarea">
-                        <textarea
-                            placeholder="Your Message"
-                            class="textarea"
-                            ></textarea>
-                    </div>
-                </div>
-            </div>
-            <a href="#" class="button-shape button-shape-dark">Read More</a>
-        </form>
-    </div>
-</section>-->
 <?php get_footer(); ?>

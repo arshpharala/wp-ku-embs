@@ -53,11 +53,11 @@ $inside = (!is_front_page() && !is_home()) ? true : false;
                         <!-- Left Logos -->
                         <div class="col-6 hero__header-logo-bar">
                             <img
-                                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/embs-logo.png"
+                                src="<?php echo esc_url(embs_get_logo('left_1')); ?>"
                                 alt="IEEE EMBS"
                                 class="hero__logo" />
                             <img
-                                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ku-logo.png"
+                                src="<?php echo esc_url(embs_get_logo('left_2')); ?>"
                                 alt="Khalifa University"
                                 class="hero__logo ku" />
                         </div>
@@ -65,7 +65,7 @@ $inside = (!is_front_page() && !is_home()) ? true : false;
                         <!-- Right Logo + Menu -->
                         <div class="hero__right_logo">
                             <img
-                                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ieee-logo.png"
+                                src="<?php echo esc_url(embs_get_logo('right')); ?>"
                                 alt="IEEE"
                                 class="hero__logo hero__ieee-logo me-3" />
                             <div class="toggle-menu" id="toggle-menu">

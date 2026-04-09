@@ -1402,6 +1402,10 @@ p {
   text-align: left;
   margin-bottom: 0.5rem;
 }
+.alumni-section .grid-links ul li a {
+  color: var(--white-color);
+  text-decoration: none;
+}
 .alumni-section .grid-links ul li img {
   width: 16px;
   margin-right: 0.5rem;

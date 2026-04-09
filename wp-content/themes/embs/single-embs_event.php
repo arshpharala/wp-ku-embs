@@ -1,13 +1,15 @@
 <?php get_header(); ?>
 
-<div class="main-container  container">
+<div class="main-container  container" id="events-single-page">
   <div class="imgs imgs-2">
-    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" />
     <?php
-    // Display additional gallery images if available
-    $gallery = get_field('event_gallery');
-    if ($gallery && is_array($gallery) && count($gallery) > 0) {
-      foreach (array_slice($gallery, 0, 1) as $image) {
+    $gallery = get_field('images');
+
+    if (is_array($gallery)) {
+      foreach ($gallery as $image) {
+        if (empty($image['url'])) {
+          continue;
+        }
         echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" />';
       }
     }
