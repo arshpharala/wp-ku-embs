@@ -280,7 +280,9 @@
 <!-- conference-section -->
 <section id="conference" class="conference-section">
     <div class="container">
-        <div class="conference-grid">
+        <!-- <div class="conference-grid"> -->
+        <div class="owl-carousel owl-carousel-4">
+
             <?php
             $args = array(
                 'post_type' => 'embs_event',
@@ -299,10 +301,8 @@
                             alt="Conference Image"
                             class="conference-img" />
                         <div class="conference-content">
-                            <h3><?php the_title() ?></h3>
-                            <p>
-                                <?php the_content(); ?>
-                            </p>
+                            <h3 style="margin-bottom: 2rem;"><?php the_title() ?></h3>
+
                             <a href="<?php echo get_permalink(); ?>" class="button-shape button-shape-primary read-more">Read More</a>
                         </div>
                     </div>
@@ -391,12 +391,12 @@
                     $speakers = new WP_Query($args);
                     if ($speakers->have_posts()) : while ($speakers->have_posts()) : $speakers->the_post();
 
-                    $img = has_post_thumbnail() ? get_the_post_thumbnail_url() : esc_url(get_template_directory_uri()). "/assets/images/no-speaker.png";
+                            $img = has_post_thumbnail() ? get_the_post_thumbnail_url() : esc_url(get_template_directory_uri()) . "/assets/images/no-speaker.png";
                     ?>
                             <div class="speaker-card flex-fill">
                                 <div class="speaker-image">
                                     <img
-                                        src="<?php echo $img ?>" 
+                                        src="<?php echo $img ?>"
                                         alt="<?php the_title(); ?>"
                                         class="img-fluid w-100" />
                                 </div>

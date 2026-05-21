@@ -390,6 +390,7 @@
     // .awards-section
     .awards-section {
         .award-item {
+            display: flex;
             flex-direction: column !important;
             &.reverse {
                 flex-direction: column-reverse !important;
@@ -409,8 +410,12 @@
             }
 
             .award-border {
+                width: 100%;
+                height: 100%;
                 .award-image {
                     img {
+                          width: 100%;
+                height: 100%;
                         scale: 1;
                     }
                 }
@@ -606,7 +611,7 @@
 
         .conference-card {
             .conference-img {
-                height: 180px;
+                height: 300px;
             }
 
             .conference-content {
@@ -867,7 +872,7 @@
 
         .conference-card {
             .conference-img {
-                height: 180px;
+                height: 300px;
             }
 
             .conference-content {

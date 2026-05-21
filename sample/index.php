@@ -597,13 +597,13 @@ include 'header.php';
                     />
                 <div class="conference-content">
                     <h3>21st IEEE Biomedical Circuits and Systems Conference</h3>
-                    <p>
+                    <!-- <p>
                         Khalifa University was honored to host Professor Jonathan
                         Knowles from University College London for a research seminar on
                         “Future Biomaterials: Biomedical, Medicine, and Other
                         Applications” on Wednesday, February 19, 2025, at the Main
                         Campus Auditorium.
-                    </p>
+                    </p> -->
                     <a href="#" class="button-shape button-shape-primary read-more"
                        >Read More</a
                     >
@@ -619,13 +619,13 @@ include 'header.php';
                     />
                 <div class="conference-content">
                     <h3>21st IEEE Biomedical Circuits and Systems Conference</h3>
-                    <p>
+                    <!-- <p>
                         Khalifa University was honored to host Professor Jonathan
                         Knowles from University College London for a research seminar on
                         “Future Biomaterials: Biomedical, Medicine, and Other
                         Applications” on Wednesday, February 19, 2025, at the Main
                         Campus Auditorium.
-                    </p>
+                    </p> -->
                     <a href="#" class="button-shape button-shape-primary read-more"
                        >Read More</a
                     >
@@ -641,13 +641,13 @@ include 'header.php';
                     />
                 <div class="conference-content">
                     <h3>21st IEEE Biomedical Circuits and Systems Conference</h3>
-                    <p>
+                    <!-- <p>
                         Khalifa University was honored to host Professor Jonathan
                         Knowles from University College London for a research seminar on
                         “Future Biomaterials: Biomedical, Medicine, and Other
                         Applications” on Wednesday, February 19, 2025, at the Main
                         Campus Auditorium.
-                    </p>
+                    </p> -->
                     <a href="#" class="button-shape button-shape-primary read-more"
                        >Read More</a
                     >
@@ -663,13 +663,13 @@ include 'header.php';
                     />
                 <div class="conference-content">
                     <h3>21st IEEE Biomedical Circuits and Systems Conference</h3>
-                    <p>
+                    <!-- <p>
                         Khalifa University was honored to host Professor Jonathan
                         Knowles from University College London for a research seminar on
                         “Future Biomaterials: Biomedical, Medicine, and Other
                         Applications” on Wednesday, February 19, 2025, at the Main
                         Campus Auditorium.
-                    </p>
+                    </p> -->
                     <a href="#" class="button-shape button-shape-primary read-more"
                        >Read More</a
                     >

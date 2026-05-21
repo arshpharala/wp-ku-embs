@@ -23,10 +23,10 @@
 define( 'DB_NAME', 'embs' );
 
 /** Database username */
-define( 'DB_USER', 'embs' );
+define( 'DB_USER', 'root' );
 
 /** Database password */
-define( 'DB_PASSWORD', 'Charlie@12345' );
+define( 'DB_PASSWORD', '' );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );

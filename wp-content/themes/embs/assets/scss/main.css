@@ -200,9 +200,6 @@ p {
   padding-top: 5px;
   padding-bottom: 10px;
   border-bottom: 1px dotted #fff;
-  /*        a:hover{
-              color: #2059a8; 
-          }*/
 }
 .slide-menu > ul > li a {
   color: #fff;
@@ -233,11 +230,16 @@ p {
 .slide-menu > ul > li:first-child a {
   padding-left: 0;
 }
+.slide-menu > ul > li:last-child a:after {
+  display: none;
+}
 .slide-menu > ul > li:last-child {
   padding-right: 0;
 }
-.slide-menu > ul > li:last-child a:after {
-  display: none;
+.slide-menu > ul > li {
+  /*        a:hover{
+                  color: #2059a8; 
+              }*/
 }
 .slide-menu > ul > li .sub-menu {
   width: 100%;
@@ -851,10 +853,12 @@ p {
   justify-content: space-between;
   align-items: center;
   padding: 12px 20px;
-  transition: background-color 0.3s;
 }
 .event-section .event-content .event-list .event-item:nth-child(odd) {
   background-color: #e0e0e0;
+}
+.event-section .event-content .event-list .event-item {
+  transition: background-color 0.3s;
 }
 .event-section .event-content .event-list .event-item:hover {
   background-color: #f1f1f1;
@@ -917,6 +921,7 @@ p {
 
 .conference-section {
   margin-top: var(--margin-section);
+  margin-bottom: 150px;
 }
 .conference-section .conference-container {
   max-width: 900px;
@@ -924,16 +929,11 @@ p {
   font-size: 1rem;
   line-height: 1.5;
 }
-.conference-section .conference-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 60px;
-  margin-bottom: 5rem;
-}
 .conference-section .conference-card .conference-img {
   width: 100%;
   height: 290px;
   object-fit: cover;
+  object-position: top;
 }
 .conference-section .conference-card .conference-content {
   padding-top: 1.75rem;
@@ -949,6 +949,46 @@ p {
   line-height: 1.5;
   color: var(--black-color);
 }
+.conference-section .owl-carousel {
+  position: initial;
+}
+.conference-section .owl-carousel .owl-dots {
+  display: none;
+}
+.conference-section .owl-carousel .owl-nav {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+}
+.conference-section .owl-carousel .owl-nav button {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.conference-section .owl-carousel .owl-nav button span {
+  width: 55px;
+  height: 55px;
+  display: block;
+}
+.conference-section .owl-carousel .owl-nav button.owl-prev span {
+  background: url(../images/arrow-left.png) no-repeat center center;
+}
+.conference-section .owl-carousel .owl-nav button.owl-next span {
+  background: url(../images/arrow-right.png) no-repeat center center;
+}
+.conference-section .owl-carousel .owl-nav button.owl-next {
+  margin-left: 10px;
+}
+.conference-section .owl-carousel .owl-nav button:hover {
+  background-color: var(--primary-color);
+}
 
 .awards-section {
   background: var(--primary-color);
@@ -963,6 +1003,8 @@ p {
   font-weight: 600;
 }
 .awards-section .award-item {
+  position: relative;
+  overflow: hidden;
   gap: 2.75rem;
   margin-bottom: var(--margin-section);
   display: grid;
@@ -973,7 +1015,7 @@ p {
   flex-direction: row;
 }
 .awards-section .award-item .award-border {
-  overflow: hidden;
+  overflow: hidden !important;
 }
 .awards-section .award-item .award-border .award-image {
   position: relative;
@@ -1049,7 +1091,7 @@ p {
 }
 .speakers-section .speaker-card {
   /*        display: flex;
-          flex-direction: column;*/
+              flex-direction: column;*/
 }
 .speakers-section .speaker-card .speaker-image {
   position: relative;
@@ -1217,8 +1259,6 @@ p {
   color: var(--white-color);
   padding: var(--margin-section) 0;
   text-align: center;
-  /* inner sub-box */
-  /* Alumni Carousel - Vertical Slide */
 }
 .alumni-section .section-title {
   color: var(--white-color);
@@ -1358,6 +1398,9 @@ p {
   position: relative;
   /* required for pseudo-element positioning */
 }
+.alumni-section {
+  /* inner sub-box */
+}
 .alumni-section .active-box::after {
   content: "";
   width: 12px;
@@ -1409,6 +1452,9 @@ p {
 .alumni-section .grid-links ul li img {
   width: 16px;
   margin-right: 0.5rem;
+}
+.alumni-section {
+  /* Alumni Carousel - Vertical Slide */
 }
 .alumni-section .carousel.top-to-bottom .carousel-inner {
   height: 100%;
@@ -1574,6 +1620,30 @@ p {
 }
 .site-footer .footer-right {
   color: #ccc;
+}
+
+.single-embs {
+  padding: 4rem 0;
+}
+.single-embs__images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+  gap: 3rem;
+  margin: 2rem 0;
+}
+.single-embs__images.single-image {
+  grid-template-columns: 1fr;
+}
+.single-embs__images.three-column {
+  grid-template-columns: repeat(3, 1fr);
+}
+.single-embs__event-img {
+  width: 100%;
+  height: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  object-position: top;
 }
 
 /*# sourceMappingURL=main.css.map */
