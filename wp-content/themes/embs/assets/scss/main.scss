@@ -1086,8 +1086,6 @@ p {
   margin-top: var(--margin-section);
   margin-bottom: 150px;
 
-  
-
   .conference-container {
     max-width: 900px;
     margin: 0 auto;
@@ -1095,12 +1093,12 @@ p {
     line-height: 1.5;
   }
 
-//   .conference-grid {
-//     display: grid;
-//     grid-template-columns: repeat(2, 1fr);
-//     gap: 60px;
-//     margin-bottom: 5rem;
-//   }
+  //   .conference-grid {
+  //     display: grid;
+  //     grid-template-columns: repeat(2, 1fr);
+  //     gap: 60px;
+  //     margin-bottom: 5rem;
+  //   }
 
   .conference-card {
     .conference-img {
@@ -1128,8 +1126,7 @@ p {
     }
   }
 
-
-   .owl-carousel {
+  .owl-carousel {
     position: initial;
 
     .owl-dots {
@@ -1143,7 +1140,7 @@ p {
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-top: 4rem; 
+      margin-top: 4rem;
 
       button {
         background-color: var(--primary-color);
@@ -1493,6 +1490,12 @@ p {
         gap: 1rem;
         margin-bottom: 1rem;
         align-items: start;
+
+        a {
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          word-break: break-word;
+        }
 
         & img {
           margin-top: 5px;

@@ -1248,6 +1248,11 @@ p {
   margin-bottom: 1rem;
   align-items: start;
 }
+.research-section .publications ul li a {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
 .research-section .publications ul li img {
   margin-top: 5px;
   filter: brightness(0) saturate(100%);
