@@ -362,10 +362,6 @@
     padding: 0rem 0rem;
     margin-top: 0;
   }
-  .conference-section {
-    padding: 4rem 0rem;
-    margin-top: 0rem;
-  }
   .conference-section .conference-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;

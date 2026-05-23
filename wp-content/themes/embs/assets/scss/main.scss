@@ -34,6 +34,7 @@ $breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
+  2lg: 1140px,
   xl: 1200px,
   xxl: 1400px,
 );
@@ -1083,8 +1084,10 @@ p {
 
 // ================= CONFERENCE SECTION =================
 .conference-section {
-  margin: var(--margin-section) 0;
-  margin-top: 8rem;
+  margin:  8rem 0 ;
+
+      // @include responsive(2lg){
+    
 
   .conference-container {
     max-width: 900px;
@@ -1142,6 +1145,12 @@ p {
       align-items: center;
       justify-content: end;
       margin-top: -4rem;
+      padding: 0 20px;
+
+      @include responsive(2lg){
+      padding: 0 0;
+
+      }
 
       button {
         background-color: var(--primary-color);
